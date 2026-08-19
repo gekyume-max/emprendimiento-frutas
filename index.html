@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frutas & Verduras - Fresco Hogar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="logo">
+            <span>🥬</span>
+            <div>
+                <h1>Fresco Hogar</h1>
+                <p>Frutas & Verduras</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="btn-carrito" onclick="abrirCarrito()">
+            🛒 Carrito
+            <span id="contador-carrito">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-contenido">
+
+            <span class="etiqueta">🍎 PRODUCTOS FRESCOS</span>
+
+            <h2>
+                Frutas y verduras
+                <span>directo a tu hogar</span>
+            </h2>
+
+            <p>
+                Compra productos frescos, seleccionados con cariño
+                y recíbelos directamente en la puerta de tu casa.
+            </p>
+
+            <div class="hero-botones">
+                <a href="#productos" class="btn-principal">
+                    🛒 Comprar ahora
+                </a>
+
+                <a href="#nosotros" class="btn-secundario">
+                    Conócenos
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-imagen">
+            <div class="frutas">
+                🍎 🍊 🍌
+                <br>
+                🥕 🥦 🍅
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= BENEFICIOS ================= -->
+    <section class="beneficios">
+
+        <div class="beneficio">
+            <div class="icono">🍎</div>
+            <div>
+                <h3>Productos frescos</h3>
+                <p>Seleccionados para ti.</p>
+            </div>
+        </div>
+
+        <div class="beneficio">
+            <div class="icono">🚚</div>
+            <div>
+                <h3>Delivery a domicilio</h3>
+                <p>Recibe tu pedido en casa.</p>
+            </div>
+        </div>
+
+        <div class="beneficio">
+            <div class="icono">💚</div>
+            <div>
+                <h3>Compra fácil</h3>
+                <p>Realiza tu pedido rápidamente.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCTOS ================= -->
+    <section id="productos" class="productos-section">
+
+        <div class="titulo-section">
+
+            <span>NUESTROS PRODUCTOS</span>
+
+            <h2>
+                Frescura para tu hogar
+            </h2>
+
+            <p>
+                Elige tus productos favoritos y agrégalos al carrito.
+            </p>
+
+        </div>
+
+
+        <!-- FILTROS -->
+        <div class="filtros">
+
+            <button class="filtro activo" onclick="filtrarProductos('todos', this)">
+                Todos
+            </button>
+
+            <button class="filtro" onclick="filtrarProductos('frutas', this)">
+                🍎 Frutas
+            </button>
+
+            <button class="filtro" onclick="filtrarProductos('verduras', this)">
+                🥬 Verduras
+            </button>
+
+            <button class="filtro" onclick="filtrarProductos('packs', this)">
+                📦 Packs
+            </button>
+
+        </div>
+
+
+        <!-- CONTENEDOR PRODUCTOS -->
+        <div id="lista-productos" class="productos-grid"></div>
+
+    </section>
+
+
+    <!-- ================= NOSOTROS ================= -->
+    <section id="nosotros" class="nosotros">
+
+        <div class="nosotros-imagen">
+            🍎 🥬
+            <br>
+            🥕 🍅
+        </div>
+
+        <div class="nosotros-texto">
+
+            <span>CONÓCENOS</span>
+
+            <h2>
+                Frescura y calidad
+                para tu familia
+            </h2>
+
+            <p>
+                Somos un emprendimiento familiar dedicado a entregar
+                frutas y verduras frescas directamente a nuestros clientes.
+            </p>
+
+            <p>
+                Seleccionamos nuestros productos pensando siempre en
+                entregar buena calidad y precios accesibles.
+            </p>
+
+            <div class="datos">
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Frescura</span>
+                </div>
+
+                <div>
+                    <strong>24h</strong>
+                    <span>Pedidos</span>
+                </div>
+
+                <div>
+                    <strong>🚚</strong>
+                    <span>Delivery</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" class="contacto">
+
+        <div class="titulo-section">
+
+            <span>CONTÁCTANOS</span>
+
+            <h2>
+                ¿Tienes alguna pregunta?
+            </h2>
+
+            <p>
+                Estamos disponibles para ayudarte con tu pedido.
+            </p>
+
+        </div>
+
+        <div class="contacto-grid">
+
+            <div class="contacto-card">
+                <span>📱</span>
+                <h3>WhatsApp</h3>
+                <p>+56 9 1234 5678</p>
+            </div>
+
+            <div class="contacto-card">
+                <span>🚚</span>
+                <h3>Delivery</h3>
+                <p>Consulta disponibilidad en tu comuna.</p>
+            </div>
+
+            <div class="contacto-card">
+                <span>🕐</span>
+                <h3>Horario</h3>
+                <p>Lunes a sábado: 09:00 - 20:00</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-logo">
+            🥬 <strong>Fresco Hogar</strong>
+        </div>
+
+        <p>
+            Frutas y verduras frescas directo a tu hogar.
+        </p>
+
+        <p class="copyright">
+            © 2026 Fresco Hogar. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CARRITO ================= -->
+
+    <div id="fondo-carrito" class="fondo-carrito" onclick="cerrarCarrito()"></div>
+
+    <aside id="carrito" class="carrito">
+
+        <div class="carrito-header">
+
+            <h2>🛒 Tu carrito</h2>
+
+            <button onclick="cerrarCarrito()">✕</button>
+
+        </div>
+
+
+        <div id="productos-carrito" class="productos-carrito">
+
+            <div class="carrito-vacio">
+                <span>🛒</span>
+                <p>Tu carrito está vacío.</p>
+                <button onclick="cerrarCarrito()">
+                    Ver productos
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="carrito-footer">
+
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <strong id="subtotal">$0</strong>
+            </div>
+
+            <div class="delivery">
+                <span>Delivery:</span>
+                <strong id="costo-delivery">$2.000</strong>
+            </div>
+
+            <div class="total">
+                <span>Total:</span>
+                <strong id="total">$0</strong>
+            </div>
+
+            <button class="btn-pedido" onclick="abrirFormulario()">
+                Realizar pedido
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MODAL PEDIDO ================= -->
+
+    <div id="modal-pedido" class="modal">
+
+        <div class="modal-contenido">
+
+            <button class="cerrar-modal" onclick="cerrarFormulario()">
+                ✕
+            </button>
+
+            <h2>📦 Datos de entrega</h2>
+
+            <p>
+                Completa tus datos para preparar tu pedido.
+            </p>
+
+            <form id="formulario-pedido">
+
+                <label for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ej: Juan Pérez"
+                    required
+                >
+
+
+                <label for="telefono">
+                    Teléfono
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefono"
+                    placeholder="Ej: +56 9 1234 5678"
+                    required
+                >
+
+
+                <label for="direccion">
+                    Dirección
+                </label>
+
+                <input
+                    type="text"
+                    id="direccion"
+                    placeholder="Ej: Avenida Principal 123"
+                    required
+                >
+
+
+                <label for="comuna">
+                    Comuna
+                </label>
+
+                <select id="comuna" required>
+
+                    <option value="">
+                        Selecciona tu comuna
+                    </option>
+
+                    <option>Valparaíso</option>
+                    <option>Viña del Mar</option>
+                    <option>Concón</option>
+                    <option>Quilpué</option>
+                    <option>Villa Alemana</option>
+
+                </select>
+
+
+                <label for="comentario">
+                    Comentario (opcional)
+                </label>
+
+                <textarea
+                    id="comentario"
+                    placeholder="Ej: Dejar en recepción..."
+                ></textarea>
+
+
+                <button type="submit" class="btn-confirmar">
+                    📱 Enviar pedido por WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
