@@ -476,6 +476,7 @@ function actualizarCarrito() {
             <button
                 class="btn-eliminar"
                 onclick="eliminarProducto(${item.id})"
+                title="Eliminar producto"
             >
                 🗑️
             </button>
@@ -619,36 +620,40 @@ document
         let subtotal = 0;
 
 
+        /* ==========================================
+           ENCABEZADO
+        ========================================== */
+
         let mensaje =
-            "🛒 *NUEVO PEDIDO - FRESCO HOGAR*%0A%0A";
+            "🛒 *NUEVO PEDIDO — FRESCO HOGAR*\n\n";
 
+
+        /* ==========================================
+           DATOS DEL CLIENTE
+        ========================================== */
 
         mensaje +=
-            "👤 *Cliente:* " +
+            "👤 *DATOS DEL CLIENTE*\n" +
+            "• Nombre: " +
             nombre +
-            "%0A";
-
-
-        mensaje +=
-            "📱 *Teléfono:* " +
+            "\n" +
+            "• Teléfono: " +
             telefono +
-            "%0A";
-
-
-        mensaje +=
-            "📍 *Dirección:* " +
+            "\n" +
+            "• Dirección: " +
             direccion +
-            "%0A";
-
-
-        mensaje +=
-            "🏙️ *Comuna:* " +
+            "\n" +
+            "• Comuna: " +
             comuna +
-            "%0A%0A";
+            "\n\n";
 
+
+        /* ==========================================
+           PRODUCTOS
+        ========================================== */
 
         mensaje +=
-            "🥬 *PRODUCTOS:*%0A";
+            "🛍️ *DETALLE DEL PEDIDO*\n";
 
 
         carrito.forEach(item => {
@@ -663,64 +668,72 @@ document
             mensaje +=
                 "• " +
                 item.nombre +
-                " x" +
+                " × " +
                 item.cantidad +
-                " = " +
+                " — " +
                 formatoPrecio(totalProducto) +
-                "%0A";
+                "\n";
 
         });
 
+
+        /* ==========================================
+           RESUMEN
+        ========================================== */
 
         const total =
             subtotal + costoDelivery;
 
 
         mensaje +=
-            "%0A💰 *Subtotal:* " +
-            formatoPrecio(subtotal);
+            "\n💰 *RESUMEN DE COMPRA*\n" +
+            "• Subtotal: " +
+            formatoPrecio(subtotal) +
+            "\n" +
+            "• Delivery: " +
+            formatoPrecio(costoDelivery) +
+            "\n" +
+            "• *TOTAL: " +
+            formatoPrecio(total) +
+            "*\n";
 
 
-        mensaje +=
-            "%0A🚚 *Delivery:* " +
-            formatoPrecio(costoDelivery);
-
-
-        mensaje +=
-            "%0A💵 *TOTAL:* " +
-            formatoPrecio(total);
-
+        /* ==========================================
+           COMENTARIO
+        ========================================== */
 
         if (comentario !== "") {
 
             mensaje +=
-                "%0A%0A📝 *Comentario:* " +
-                comentario;
+                "\n📝 *Comentario:*\n" +
+                comentario +
+                "\n";
 
         }
 
 
+        /* ==========================================
+           DESPEDIDA
+        ========================================== */
+
         mensaje +=
-            "%0A%0A¡Gracias por tu compra! 💚";
+            "\n💚 ¡Gracias por comprar en *Fresco Hogar*!" +
+            "\n📦 Prepararemos tu pedido a la brevedad.";
 
 
-        /*
-         * IMPORTANTE:
-         * Cambia este número por el WhatsApp real
-         * del emprendimiento.
-         *
-         * Formato:
-         * 56912345678
-         */
+        /* ==========================================
+           WHATSAPP
+        ========================================== */
 
-        const numeroWhatsApp = "56990380653";
+        const numeroWhatsApp =
+            "56990380653";
 
 
         const url =
             "https://wa.me/" +
             numeroWhatsApp +
             "?text=" +
-            mensaje;
+            encodeURIComponent(mensaje);
 
 
         window.open(url, "_blank");
